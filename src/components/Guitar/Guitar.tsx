@@ -28,9 +28,9 @@ const stringPositions = [
 ];
 
 const stringSounds: Howl[] = [
-  new Howl({ src: ["src/assets/sounds/string1.mp3"] }),
-  new Howl({ src: ["src/assets/sounds/string2.mp3"] }),
-  new Howl({ src: ["src/assets/sounds/string3.mp3"] }),
+  new Howl({ src: ["/assets/sounds/string1.mp3"] }),
+  new Howl({ src: ["/assets/sounds/string2.mp3"] }),
+  new Howl({ src: ["/assets/sounds/string3.mp3"] }),
 ];
 
 const Guitar: React.FC = () => {
