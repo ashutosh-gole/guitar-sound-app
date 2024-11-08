@@ -1,32 +1,58 @@
-/* Full-screen centered SVG */
-.guitar-container {
-  position: relative;
+/* Reset some basic styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* light background for contrast */
+}
+
+/* Center the main app container */
+.app-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 
+/* Ensure the guitar image takes up a larger portion of the viewport */
 .guitar-image {
-  width: 80vw; /* Adjust size as needed to cover most of the viewport */
+  width: 90vw; /* Adjusted to make the guitar bigger */
   height: auto;
+  max-width: 100%;
 }
 
+/* Highlight and animate string points */
 .string-point {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
+  width: 18px;
+  height: 18px;
+  background-color: rgba(30, 144, 255, 0.9); /* Dodger blue for visibility */
+  border: 2px solid white;
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .string-point.active {
-  background-color: rgba(255, 0, 0, 0.5); /* highlight on click */
-  transform: scale(1.2); /* enlarge slightly */
+  background-color: rgba(255, 69, 0, 0.9); /* Dark orange color on click */
+  transform: scale(1.3); /* Enlarge on click */
   animation: pulse 0.3s ease-in-out;
 }
 
@@ -35,45 +61,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.3);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.guitar-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-}
-
-.guitar-image {
-  width: 100%;
-}
-
-.string-point {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.string-point.active {
-  background-color: rgba(255, 0, 0, 0.5); /* highlight on click */
-  transform: scale(1.2); /* enlarge slightly */
-  animation: pulse 0.3s ease-in-out;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3);
+    transform: scale(1.4);
   }
   100% {
     transform: scale(1);

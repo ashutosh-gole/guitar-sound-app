@@ -3,49 +3,34 @@ import React, { useState } from "react";
 import GuitarSVG from "../../assets/guitar.svg";
 import "./Guitar.css";
 
-// Define positions for multiple points along each string
 const stringPositions = [
-  // Each array represents positions for one string (top, left)
   [
-    { top: "30%", left: "15%" },
-    { top: "30%", left: "25%" },
-    { top: "30%", left: "35%" },
+    { top: "45.5%", left: "24.2%" },
+    { top: "45.5%", left: "36%" },
+    { top: "45.5%", left: "50.7%" },
+    { top: "45.5%", left: "65.6%" },
+    { top: "45.5%", left: "76.6%" },
   ],
   [
-    { top: "35%", left: "15%" },
-    { top: "35%", left: "25%" },
-    { top: "35%", left: "35%" },
+    { top: "48.5%", left: "24.2%" },
+    { top: "48.5%", left: "36%" },
+    { top: "48.5%", left: "50.7%" },
+    { top: "48.5%", left: "65.6%" },
+    { top: "48.5%", left: "76.6%" },
   ],
   [
-    { top: "40%", left: "15%" },
-    { top: "40%", left: "25%" },
-    { top: "40%", left: "35%" },
-  ],
-  [
-    { top: "45%", left: "15%" },
-    { top: "45%", left: "25%" },
-    { top: "45%", left: "35%" },
-  ],
-  [
-    { top: "50%", left: "15%" },
-    { top: "50%", left: "25%" },
-    { top: "50%", left: "35%" },
-  ],
-  [
-    { top: "55%", left: "15%" },
-    { top: "55%", left: "25%" },
-    { top: "55%", left: "35%" },
+    { top: "51.8%", left: "24.2%" },
+    { top: "51.8%", left: "36%" },
+    { top: "51.8%", left: "50.7%" },
+    { top: "51.8%", left: "65.6%" },
+    { top: "51.8%", left: "76.6%" },
   ],
 ];
 
-// Set up Howl instances for each string sound
 const stringSounds: Howl[] = [
   new Howl({ src: ["src/assets/sounds/string1.mp3"] }),
   new Howl({ src: ["src/assets/sounds/string2.mp3"] }),
   new Howl({ src: ["src/assets/sounds/string3.mp3"] }),
-  new Howl({ src: ["src/assets/sounds/string4.mp3"] }),
-  new Howl({ src: ["src/assets/sounds/string5.mp3"] }),
-  new Howl({ src: ["src/assets/sounds/string6.mp3"] }),
 ];
 
 const Guitar: React.FC = () => {
@@ -56,10 +41,10 @@ const Guitar: React.FC = () => {
 
   const handlePointClick = (stringIndex: number, pointIndex: number) => {
     setActivePoint({ stringIndex, pointIndex });
-    stringSounds[stringIndex].stop(); // Stop the sound if it's currently playing
-    stringSounds[stringIndex].play(); // Play sound for this string
+    // stringSounds[stringIndex].stop();
+    stringSounds[stringIndex].play();
 
-    setTimeout(() => setActivePoint(null), 200); // Remove active effect after animation
+    setTimeout(() => setActivePoint(null), 200);
   };
 
   return (
