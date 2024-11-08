@@ -28,9 +28,9 @@ const stringPositions = [
 ];
 
 const stringSounds: Howl[] = [
-  new Howl({ src: ["/assets/sounds/string1.mp3"] }),
-  new Howl({ src: ["/assets/sounds/string2.mp3"] }),
-  new Howl({ src: ["/assets/sounds/string3.mp3"] }),
+  new Howl({ src: ["/public/assets/sounds/string1.mp3"] }),
+  new Howl({ src: ["/public/assets/sounds/string2.mp3"] }),
+  new Howl({ src: ["/public/assets/sounds/string3.mp3"] }),
 ];
 
 const Guitar: React.FC = () => {
@@ -43,6 +43,7 @@ const Guitar: React.FC = () => {
     setActivePoint({ stringIndex, pointIndex });
     // stringSounds[stringIndex].stop();
     stringSounds[stringIndex].play();
+    console.log("path === ", stringSounds[stringIndex]);
 
     setTimeout(() => setActivePoint(null), 200);
   };
